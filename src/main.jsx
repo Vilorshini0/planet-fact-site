@@ -1,10 +1,32 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './scss/app.css'
+import React from "react"
+import { createRoot } from 'react-dom/client'
+import App from "./App"
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import Mercury from "./pages/Mercury"
+import Venus from "./pages/Venus"
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <Mercury />,
+      },
+      {
+        path: "/venus",
+        element: <Venus />,
+      }
+    ],
+  }
+])
+
+const container = document.getElementById('root')
+const root = createRoot(container)
+
+root.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);
