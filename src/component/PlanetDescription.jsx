@@ -1,4 +1,3 @@
-import React from "react";
 import wikiIcon from '../assets/icon-source.svg'
 
 export default function PlanetDescription(props) {
