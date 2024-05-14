@@ -30,7 +30,7 @@ export default function HeaderMobile() {
                         {data.map((planet, index) => {
                             return (
                                 <li key={index}>
-                                    <Link className="nav-link" to={planet.url}>
+                                    <Link className="nav-link" to={planet.url} onClick={() => setIsMenuOpen(false)}>
                                         <div className={`color-dot ${planet.name}`}></div>
                                         <h2>{planet.name}</h2>
                                         <img src={chevronIcon} />
