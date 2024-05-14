@@ -13,22 +13,25 @@ export default function HeaderMobile() {
     }
 
     return (
-        <header>
-            <h1>THE PLANETS</h1>
+        <header className="header-mobile">
+            <h1 className="header-mobile__title">THE PLANETS</h1>
 
-            <button onClick={handleToggleMenu}>
+            <button 
+                onClick={handleToggleMenu} 
+                className={`header-mobile__burger-btn ${isMenuOpen && 'header-mobile__burger-btn--active'}`}
+            >
                 <img src={burgerIcon} />
             </button>
 
             {isMenuOpen && 
-                <nav>
+                <nav className="header-mobile__nav">
                     <ul>
                         {/* Loop on data to generate navigation */}
                         {data.map((planet, index) => {
                             return (
                                 <li key={index}>
-                                    <Link className={`nav-link ${planet.name}`} to={planet.url}>
-                                        <div className="color-dot"></div>
+                                    <Link className="nav-link" to={planet.url}>
+                                        <div className={`color-dot ${planet.name}`}></div>
                                         <h2>{planet.name}</h2>
                                         <img src={chevronIcon} />
                                     </Link>
