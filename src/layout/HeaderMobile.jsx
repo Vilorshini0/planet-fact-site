@@ -18,7 +18,7 @@ export default function HeaderMobile() {
 
             <button 
                 onClick={handleToggleMenu} 
-                className={`header-mobile__burger-btn ${isMenuOpen && 'header-mobile__burger-btn--active'}`}
+                className={`header-mobile__burger-btn ${isMenuOpen ? 'header-mobile__burger-btn--active' : ''}`}
             >
                 <img src={burgerIcon} />
             </button>
