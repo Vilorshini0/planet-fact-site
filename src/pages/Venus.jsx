@@ -1,10 +1,10 @@
-import React from "react";
+import React from "react"
 import { useSelector } from "react-redux"
 import imgPlanet from '../assets/planet-venus.svg'
 import imgPlanetInternal from '../assets/planet-venus-internal.svg'
 import imgPlanetSurface from '../assets/geology-venus.png'
-import PlanetDescription from "../component/PlanetDescription";
-import PlanetCharacteristics from "../component/PlanetCharacteristics";
+import PlanetDescription from "../component/PlanetDescription"
+import PlanetCharacteristics from "../component/PlanetCharacteristics"
 import data from "../data.json"
 
 export default function Venus() {

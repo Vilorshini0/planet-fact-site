@@ -1,37 +1,37 @@
 import React from "react"
 import { useSelector } from "react-redux"
-import imgPlanet from '../assets/planet-earth.svg'
-import imgPlanetInternal from '../assets/planet-earth-internal.svg'
-import imgPlanetSurface from '../assets/geology-earth.png'
+import imgPlanet from '../assets/planet-uranus.svg'
+import imgPlanetInternal from '../assets/planet-uranus-internal.svg'
+import imgPlanetSurface from '../assets/geology-uranus.png'
 import PlanetDescription from "../component/PlanetDescription"
 import PlanetCharacteristics from "../component/PlanetCharacteristics"
 import data from "../data.json"
 
-export default function Earth() {
+export default function Uranus() {
   const screenWidth = useSelector(state => state.appState.screenWidth)
   const [pageStatus, setPageStatus] = React.useState('overview')
-  const earth = data[2]
+  const uranus = data[6]
 
   const pageStatusMapping = {
       overview: {
-      content: earth.overview.content,
-      source: earth.overview.source,
+      content: uranus.overview.content,
+      source: uranus.overview.source,
       img: imgPlanet
       },
       structure: {
-      content: earth.structure.content,
-      source: earth.structure.source,
+      content: uranus.structure.content,
+      source: uranus.structure.source,
       img: imgPlanetInternal
       },
       geology: {
-      content: earth.geology.content,
-      source: earth.geology.source,
+      content: uranus.geology.content,
+      source: uranus.geology.source,
       img: imgPlanet
       }
   }
 
   return (
-      <main className="planet-earth">
+      <main className="planet-uranus">
     {/* Mobile */}
     {screenWidth <= 768 &&
       <section>
@@ -45,7 +45,7 @@ export default function Earth() {
     {pageStatus === 'geology' && <img src={imgPlanetSurface} />}
 
     <PlanetDescription
-      planetName={earth.name}
+      planetName={uranus.name}
       description={pageStatusMapping[pageStatus]?.content || ''}
       source={pageStatusMapping[pageStatus]?.source || ''}
     />
@@ -60,10 +60,10 @@ export default function Earth() {
     }
 
     <PlanetCharacteristics
-      rotationTime={earth.rotation}
-      revolutionTime={earth.revolution}
-      radius={earth.radius}
-      temperature={earth.temperature}
+      rotationTime={uranus.rotation}
+      revolutionTime={uranus.revolution}
+      radius={uranus.radius}
+      temperature={uranus.temperature}
     />
   </main>
   )

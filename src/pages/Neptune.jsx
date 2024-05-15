@@ -1,37 +1,37 @@
 import React from "react"
 import { useSelector } from "react-redux"
-import imgPlanet from '../assets/planet-earth.svg'
-import imgPlanetInternal from '../assets/planet-earth-internal.svg'
-import imgPlanetSurface from '../assets/geology-earth.png'
+import imgPlanet from '../assets/planet-neptune.svg'
+import imgPlanetInternal from '../assets/planet-neptune-internal.svg'
+import imgPlanetSurface from '../assets/geology-neptune.png'
 import PlanetDescription from "../component/PlanetDescription"
 import PlanetCharacteristics from "../component/PlanetCharacteristics"
 import data from "../data.json"
 
-export default function Earth() {
+export default function Neptune() {
   const screenWidth = useSelector(state => state.appState.screenWidth)
   const [pageStatus, setPageStatus] = React.useState('overview')
-  const earth = data[2]
+  const neptune = data[6]
 
   const pageStatusMapping = {
       overview: {
-      content: earth.overview.content,
-      source: earth.overview.source,
+      content: neptune.overview.content,
+      source: neptune.overview.source,
       img: imgPlanet
       },
       structure: {
-      content: earth.structure.content,
-      source: earth.structure.source,
+      content: neptune.structure.content,
+      source: neptune.structure.source,
       img: imgPlanetInternal
       },
       geology: {
-      content: earth.geology.content,
-      source: earth.geology.source,
+      content: neptune.geology.content,
+      source: neptune.geology.source,
       img: imgPlanet
       }
   }
 
   return (
-      <main className="planet-earth">
+      <main className="planet-neptune">
     {/* Mobile */}
     {screenWidth <= 768 &&
       <section>
@@ -45,7 +45,7 @@ export default function Earth() {
     {pageStatus === 'geology' && <img src={imgPlanetSurface} />}
 
     <PlanetDescription
-      planetName={earth.name}
+      planetName={neptune.name}
       description={pageStatusMapping[pageStatus]?.content || ''}
       source={pageStatusMapping[pageStatus]?.source || ''}
     />
@@ -60,10 +60,10 @@ export default function Earth() {
     }
 
     <PlanetCharacteristics
-      rotationTime={earth.rotation}
-      revolutionTime={earth.revolution}
-      radius={earth.radius}
-      temperature={earth.temperature}
+      rotationTime={neptune.rotation}
+      revolutionTime={neptune.revolution}
+      radius={neptune.radius}
+      temperature={neptune.temperature}
     />
   </main>
   )
