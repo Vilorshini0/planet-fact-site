@@ -3,9 +3,9 @@ import data from "../data.json"
 
 export default function HeaderDesktop() {
     return (
-        <header>
-            <h1>THE PLANETS</h1>
-            <nav>
+        <header className="header-desktop">
+            <h1  className="header-desktop__title">THE PLANETS</h1>
+            <nav className="header-desktop__nav">
                 <ul>
                     {data.map((planet, index) => {
                         return (

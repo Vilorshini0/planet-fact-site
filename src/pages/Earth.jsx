@@ -34,10 +34,10 @@ export default function Earth() {
       <main className="planet-earth">
     {/* Mobile */}
     {screenWidth <= 768 &&
-      <section>
-        <button onClick={() => setPageStatus('overview')} className={pageStatus === 'overview' ? 'active' : undefined }>Overview</button>
-        <button onClick={() => setPageStatus('structure')} className={pageStatus === 'structure' ? 'active' : undefined }>Structure</button>
-        <button onClick={() => setPageStatus('geology')} className={pageStatus === 'geology' ? 'active' : undefined }>Surface</button>
+      <section className='view-switcher--mobile'>
+        <button onClick={() => setPageStatus('overview')} className={pageStatus === 'overview' ? 'view-switcher--active' : undefined }>Overview</button>
+        <button onClick={() => setPageStatus('structure')} className={pageStatus === 'structure' ? 'view-switcher--active' : undefined }>Structure</button>
+        <button onClick={() => setPageStatus('geology')} className={pageStatus === 'geology' ? 'view-switcher--active' : undefined }>Surface</button>
       </section>
     }
 
@@ -52,10 +52,10 @@ export default function Earth() {
 
     {/* Tablet/desktop */}
     {screenWidth > 768 &&
-      <section>
-        <button onClick={() => setPageStatus('overview')} className={pageStatus === 'overview' ? 'active' : undefined }>Overview</button>
-        <button onClick={() => setPageStatus('structure')} className={pageStatus === 'structure' ? 'active' : undefined }>Internal Structure</button>
-        <button onClick={() => setPageStatus('geology')} className={pageStatus === 'geology' ? 'active' : undefined }>Surface</button>
+      <section className='view-switcher--desktop'>
+        <button onClick={() => setPageStatus('overview')} className={pageStatus === 'overview' ? earth.name : undefined }>Overview</button>
+        <button onClick={() => setPageStatus('structure')} className={pageStatus === 'structure' ? earth.name : undefined }>Internal Structure</button>
+        <button onClick={() => setPageStatus('geology')} className={pageStatus === 'geology' ? earth.name : undefined }>Surface</button>
       </section>
     }
 
