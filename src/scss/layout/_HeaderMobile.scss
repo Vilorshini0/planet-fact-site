@@ -36,6 +36,7 @@
         height: 100vh;
         padding: 1rem 0;
         background-color: $color-background-primary;
+        z-index: 1;
 
         ul {
             list-style: none;
