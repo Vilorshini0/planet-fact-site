@@ -35,9 +35,18 @@ export default function Earth() {
     {/* Mobile */}
     {screenWidth <= 768 &&
       <section className='view-switcher--mobile'>
-        <button onClick={() => setPageStatus('overview')} className={pageStatus === 'overview' ? 'view-switcher--active' : undefined }>Overview</button>
-        <button onClick={() => setPageStatus('structure')} className={pageStatus === 'structure' ? 'view-switcher--active' : undefined }>Structure</button>
-        <button onClick={() => setPageStatus('geology')} className={pageStatus === 'geology' ? 'view-switcher--active' : undefined }>Surface</button>
+        <div className={pageStatus === 'overview' ? 'view-switcher--active' : undefined }>
+          <button onClick={() => setPageStatus('overview')}>Overview</button>
+          <span className={earth.name}></span>
+        </div>
+        <div className={pageStatus === 'structure' ? 'view-switcher--active' : undefined }>
+          <button onClick={() => setPageStatus('structure')} >Structure</button>
+          <span className={earth.name}></span>
+        </div>
+        <div className={pageStatus === 'geology' ? 'view-switcher--active' : undefined }>
+          <button onClick={() => setPageStatus('geology')} >Surface</button>
+          <span className={earth.name}></span>
+        </div>
       </section>
     }
 
