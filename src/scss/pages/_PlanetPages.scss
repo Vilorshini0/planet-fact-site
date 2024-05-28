@@ -1,13 +1,13 @@
-.view-switcher--mobile {
+.view-switcher-mobile {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 2rem;
+    padding: 0 2rem;
     border-bottom: 1px solid $color-border-primary;
 
     button {
         background-color: transparent;
-        color: $color-text-primary;
+        color: $color-text-secondary;
         outline: none;
         border: none;
         display: flex;
@@ -22,13 +22,23 @@
 
     .view-switcher--active {
         position: relative;
+        height: 3.3rem;
+        display: flex;
+        align-items: center;
+
+        button {
+            color: $color-text-primary;
+        }
 
         span {
             position: absolute;
             height: 0.25rem;
             width: 100%;
-            display: block;
-            transform: translateY(12px);
+            bottom: 0;
         }
     }
+}
+
+.planet-visual {
+    width: 80%;
 }

@@ -142,16 +142,16 @@ h1, h2, h3, h4, h5, h6, p, span {
   text-decoration: none;
 }
 
-.view-switcher--mobile {
+.view-switcher-mobile {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem;
+  padding: 0 2rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
-.view-switcher--mobile button {
+.view-switcher-mobile button {
   background-color: transparent;
-  color: rgb(255, 255, 255);
+  color: rgba(255, 255, 255, 0.75);
   outline: none;
   border: none;
   display: flex;
@@ -163,13 +163,22 @@ h1, h2, h3, h4, h5, h6, p, span {
   letter-spacing: 0.12rem;
   font-weight: 700;
 }
-.view-switcher--mobile .view-switcher--active {
+.view-switcher-mobile .view-switcher--active {
   position: relative;
+  height: 3.3rem;
+  display: flex;
+  align-items: center;
 }
-.view-switcher--mobile .view-switcher--active span {
+.view-switcher-mobile .view-switcher--active button {
+  color: rgb(255, 255, 255);
+}
+.view-switcher-mobile .view-switcher--active span {
   position: absolute;
   height: 0.25rem;
   width: 100%;
-  display: block;
-  transform: translateY(12px);
+  bottom: 0;
+}
+
+.planet-visual {
+  width: 80%;
 }/*# sourceMappingURL=app.css.map */

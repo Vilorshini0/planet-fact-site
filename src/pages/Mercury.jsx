@@ -41,7 +41,7 @@ export default function Mercury() {
         </section>
       }
 
-      <img src={pageStatusMapping[pageStatus]?.img} />
+      <img className="planet-visual" src={pageStatusMapping[pageStatus]?.img} />
       {pageStatus === 'geology' && <img src={imgPlanetSurface} />}
 
       <PlanetDescription

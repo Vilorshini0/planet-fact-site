@@ -2,6 +2,8 @@ import React from "react"
 import { useSelector } from "react-redux"
 import imgPlanet from '../assets/planet-earth.svg'
 import imgPlanetInternal from '../assets/planet-earth-internal.svg'
+import ViewSwitcherMobile from "../component/ViewSwitcherMobile"
+import ViewSwitcherDesktop from "../component/ViewSwitcherDesktop"
 import imgPlanetSurface from '../assets/geology-earth.png'
 import PlanetDescription from "../component/PlanetDescription"
 import PlanetCharacteristics from "../component/PlanetCharacteristics"
@@ -9,7 +11,7 @@ import data from "../data.json"
 
 export default function Earth() {
   const screenWidth = useSelector(state => state.appState.screenWidth)
-  const [pageStatus, setPageStatus] = React.useState('overview')
+  const pageStatus = useSelector(state => state.appState.pageStatus)
   const earth = data[2]
 
   const pageStatusMapping = {
@@ -33,24 +35,9 @@ export default function Earth() {
   return (
       <main className="planet-earth">
     {/* Mobile */}
-    {screenWidth <= 768 &&
-      <section className='view-switcher--mobile'>
-        <div className={pageStatus === 'overview' ? 'view-switcher--active' : undefined }>
-          <button onClick={() => setPageStatus('overview')}>Overview</button>
-          <span className={earth.name}></span>
-        </div>
-        <div className={pageStatus === 'structure' ? 'view-switcher--active' : undefined }>
-          <button onClick={() => setPageStatus('structure')} >Structure</button>
-          <span className={earth.name}></span>
-        </div>
-        <div className={pageStatus === 'geology' ? 'view-switcher--active' : undefined }>
-          <button onClick={() => setPageStatus('geology')} >Surface</button>
-          <span className={earth.name}></span>
-        </div>
-      </section>
-    }
+    {screenWidth <= 768 && <ViewSwitcherMobile planetName={earth.name} />}
 
-    <img src={pageStatusMapping[pageStatus]?.img} />
+    <img className="planet-visual" src={pageStatusMapping[pageStatus]?.img} />
     {pageStatus === 'geology' && <img src={imgPlanetSurface} />}
 
     <PlanetDescription
@@ -60,13 +47,7 @@ export default function Earth() {
     />
 
     {/* Tablet/desktop */}
-    {screenWidth > 768 &&
-      <section className='view-switcher--desktop'>
-        <button onClick={() => setPageStatus('overview')} className={pageStatus === 'overview' ? earth.name : undefined }>Overview</button>
-        <button onClick={() => setPageStatus('structure')} className={pageStatus === 'structure' ? earth.name : undefined }>Internal Structure</button>
-        <button onClick={() => setPageStatus('geology')} className={pageStatus === 'geology' ? earth.name : undefined }>Surface</button>
-      </section>
-    }
+    {screenWidth > 768 && <ViewSwitcherDesktop planetName={earth.name} />}
 
     <PlanetCharacteristics
       rotationTime={earth.rotation}
