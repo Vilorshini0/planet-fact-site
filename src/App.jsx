@@ -1,6 +1,7 @@
-import { Outlet } from "react-router-dom"
+import React from "react"
+import { Outlet, useLocation } from "react-router-dom"
 import { useDispatch, useSelector } from 'react-redux'
-import { updateState } from "./redux/appSlice"
+import { updateState, updatePageStatus } from "./redux/appSlice"
 import "./scss/app.css"
 import HeaderMobile from "./layout/HeaderMobile"
 import HeaderDesktop from "./layout/HeaderDesktop"
@@ -14,7 +15,13 @@ function App() {
   // }
 
   const dispatch = useDispatch()
+  const location = useLocation()
   const screenWidth = useSelector(state => state.appState.screenWidth)
+
+  // Reset pageStatus to "overview" when navigating to another page
+  React.useEffect(() => {
+    dispatch(updatePageStatus({pageStatus: 'overview'}))
+  }, [location]);
 
   window.addEventListener("resize", handleWindowResize)
   
@@ -24,7 +31,7 @@ function App() {
 
   return (
     <section className="app">
-      {screenWidth <= 768 ? <HeaderMobile /> : <HeaderDesktop />}
+      {screenWidth <= 882 ? <HeaderMobile /> : <HeaderDesktop />}
       <Outlet />
     </section>
   )

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import data from "../data.json"
 
 export default function HeaderDesktop() {
@@ -10,9 +10,10 @@ export default function HeaderDesktop() {
                     {data.map((planet, index) => {
                         return (
                             <li key={index}>
-                                <Link className={`nav-link ${planet.name}`} to={planet.url}> 
+                                <NavLink className='nav-link' to={planet.url}> 
+                                    <span className={planet.name}></span>
                                     <h2>{planet.name}</h2>
-                                </Link>
+                                </NavLink>
                             </li>
                         )
                     })}
