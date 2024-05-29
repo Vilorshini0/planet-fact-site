@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import wikiIcon from '../assets/icon-source.svg'
 
 export default function PlanetDescription(props) {
@@ -12,3 +13,10 @@ export default function PlanetDescription(props) {
         </section>
     )
 }
+
+// Define propTypes
+PlanetDescription.propTypes = {
+    planetName: PropTypes.string,
+    description: PropTypes.string,
+    source: PropTypes.string
+};

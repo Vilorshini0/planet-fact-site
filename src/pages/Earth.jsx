@@ -1,4 +1,3 @@
-import React from "react"
 import { useSelector } from "react-redux"
 import imgPlanet from '../assets/planet-earth.svg'
 import imgPlanetInternal from '../assets/planet-earth-internal.svg'
@@ -10,51 +9,51 @@ import PlanetCharacteristics from "../component/PlanetCharacteristics"
 import data from "../data.json"
 
 export default function Earth() {
-  const screenWidth = useSelector(state => state.appState.screenWidth)
-  const pageStatus = useSelector(state => state.appState.pageStatus)
-  const earth = data[2]
+    const screenWidth = useSelector(state => state.appState.screenWidth)
+    const pageStatus = useSelector(state => state.appState.pageStatus)
+    const earth = data[2]
 
-  const pageStatusMapping = {
-      overview: {
-      content: earth.overview.content,
-      source: earth.overview.source,
-      img: imgPlanet
-      },
-      structure: {
-      content: earth.structure.content,
-      source: earth.structure.source,
-      img: imgPlanetInternal
-      },
-      geology: {
-      content: earth.geology.content,
-      source: earth.geology.source,
-      img: imgPlanet
-      }
-  }
+    const pageStatusMapping = {
+        overview: {
+            content: earth.overview.content,
+            source: earth.overview.source,
+            img: imgPlanet
+        },
+        structure: {
+            content: earth.structure.content,
+            source: earth.structure.source,
+            img: imgPlanetInternal
+        },
+        geology: {
+            content: earth.geology.content,
+            source: earth.geology.source,
+            img: imgPlanet
+        }
+    }
 
-  return (
-      <main className="planet-earth">
-    {/* Mobile */}
-    {screenWidth <= 768 && <ViewSwitcherMobile planetName={earth.name} />}
+    return (
+        <main className="planet-earth">
+            {/* Mobile */}
+            {screenWidth <= 768 && <ViewSwitcherMobile planetName={earth.name} />}
 
-    <img className="planet-visual" src={pageStatusMapping[pageStatus]?.img} />
-    {pageStatus === 'geology' && <img src={imgPlanetSurface} />}
+            <img className="planet-visual" src={pageStatusMapping[pageStatus]?.img} />
+            {pageStatus === 'geology' && <img src={imgPlanetSurface} />}
 
-    <PlanetDescription
-      planetName={earth.name}
-      description={pageStatusMapping[pageStatus]?.content || ''}
-      source={pageStatusMapping[pageStatus]?.source || ''}
-    />
+            <PlanetDescription
+                planetName={earth.name}
+                description={pageStatusMapping[pageStatus]?.content || ''}
+                source={pageStatusMapping[pageStatus]?.source || ''}
+            />
 
-    {/* Tablet/desktop */}
-    {screenWidth > 768 && <ViewSwitcherDesktop planetName={earth.name} />}
+            {/* Tablet/desktop */}
+            {screenWidth > 768 && <ViewSwitcherDesktop planetName={earth.name} />}
 
-    <PlanetCharacteristics
-      rotationTime={earth.rotation}
-      revolutionTime={earth.revolution}
-      radius={earth.radius}
-      temperature={earth.temperature}
-    />
-  </main>
-  )
+            <PlanetCharacteristics
+                rotationTime={earth.rotation}
+                revolutionTime={earth.revolution}
+                radius={earth.radius}
+                temperature={earth.temperature}
+            />
+        </main>
+    )
 }

@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 export default function PlanetCharacteristics(props) {
     return (
         <section>
@@ -20,3 +22,11 @@ export default function PlanetCharacteristics(props) {
         </section>
     )
 }
+
+// Define propTypes
+PlanetCharacteristics.propTypes = {
+    rotationTime: PropTypes.string,
+    revolutionTime: PropTypes.string,
+    radius: PropTypes.string,
+    temperature: PropTypes.string,
+};

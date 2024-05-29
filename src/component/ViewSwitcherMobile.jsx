@@ -1,4 +1,4 @@
-import React from "react"
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux'
 import { updatePageStatus } from "../redux/appSlice"
 
@@ -24,3 +24,8 @@ export default function ViewSwitcherMobile(props) {
         </section>
     )
 }
+
+// Define propTypes
+ViewSwitcherMobile.propTypes = {
+    planetName: PropTypes.string.isRequired,
+};

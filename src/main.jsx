@@ -13,51 +13,51 @@ import Uranus from "./pages/Uranus"
 import Neptune from "./pages/Neptune"
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    children: [
-      {
+    {
         path: "/",
-        element: <Mercury />,
-      },
-      {
-        path: "/venus",
-        element: <Venus />,
-      },
-      {
-        path: "/earth",
-        element: <Earth />,
-      },
-      {
-        path: "/mars",
-        element: <Mars />,
-      },
-      {
-        path: "/jupiter",
-        element: <Jupiter />,
-      },
-      {
-        path: "/saturn",
-        element: <Saturn />,
-      },
-      {
-        path: "/uranus",
-        element: <Uranus />,
-      },
-      {
-        path: "/neptune",
-        element: <Neptune />,
-      }
-    ],
-  }
+        element: <App />,
+        children: [
+        {
+            path: "/",
+            element: <Mercury />,
+        },
+        {
+            path: "/venus",
+            element: <Venus />,
+        },
+        {
+            path: "/earth",
+            element: <Earth />,
+        },
+        {
+            path: "/mars",
+            element: <Mars />,
+        },
+        {
+            path: "/jupiter",
+            element: <Jupiter />,
+        },
+        {
+            path: "/saturn",
+            element: <Saturn />,
+        },
+        {
+            path: "/uranus",
+            element: <Uranus />,
+        },
+        {
+            path: "/neptune",
+            element: <Neptune />,
+        }
+        ],
+    }
 ])
 
 const container = document.getElementById('root')
 const root = createRoot(container)
 
 root.render(
-  <Provider store={store}>
-    <RouterProvider router={router} />
-  </Provider>
+    <Provider store={store}>
+        <RouterProvider router={router} />
+    </Provider>
 );
