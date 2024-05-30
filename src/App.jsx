@@ -7,34 +7,40 @@ import HeaderMobile from "./layout/HeaderMobile"
 import HeaderDesktop from "./layout/HeaderDesktop"
 
 function App() {
-  /* Notes */
-  // const [screenWidth, setScreenWidth] = React.useState(window.innerWidth)
-  // window.addEventListener("resize", handleWindowResize)
-  // function handleWindowResize() {
-  //     setScreenWidth(window.innerWidth)
-  // }
+    /* Notes */
+    // const [screenWidth, setScreenWidth] = React.useState(window.innerWidth)
+    // window.addEventListener("resize", handleWindowResize)
+    // function handleWindowResize() {
+    //     setScreenWidth(window.innerWidth)
+    // }
 
-  const dispatch = useDispatch()
-  const location = useLocation()
-  const screenWidth = useSelector(state => state.appState.screenWidth)
+    const dispatch = useDispatch()
+    const location = useLocation()
+    const screenWidth = useSelector(state => state.appState.screenWidth)
 
-  // Reset pageStatus to "overview" when navigating to another page
-  React.useEffect(() => {
-    dispatch(updatePageStatus({pageStatus: 'overview'}))
-  }, [location]);
+    // Reset pageStatus to "overview" when navigating to another page
+    React.useEffect(() => {
+        dispatch(updatePageStatus({pageStatus: 'overview'}))
+    }, [location]);
 
-  window.addEventListener("resize", handleWindowResize)
-  
-  function handleWindowResize() {
-    dispatch(updateState({screenWidth: window.innerWidth}))
-  }
+    React.useEffect(() => {
+        window.addEventListener("resize", handleWindowResize)
+    }, []);
 
-  return (
-    <section className="app">
-      {screenWidth <= 882 ? <HeaderMobile /> : <HeaderDesktop />}
-      <Outlet />
-    </section>
-  )
+    function handleWindowResize() {
+        let newBodyWidth = document.querySelector("body").offsetWidth
+        
+        if (newBodyWidth && newBodyWidth != undefined && newBodyWidth != screenWidth) {
+            dispatch(updateState({screenWidth: newBodyWidth}))
+        }
+    }
+
+    return (
+        <section className="app">
+            {screenWidth <= 768 ? <HeaderMobile /> : <HeaderDesktop />}
+            <Outlet />
+        </section>
+    )
 }
 
 export default App
