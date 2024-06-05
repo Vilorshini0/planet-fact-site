@@ -3,7 +3,7 @@ import wikiIcon from '../assets/icon-source.svg'
 
 export default function PlanetDescription(props) {
     return (
-        <section>
+        <section className='planet-description'>
             <h1>{props.planetName}</h1>      
             <p>{props.description}</p>
             <p className="link">

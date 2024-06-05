@@ -66,6 +66,7 @@
                         letter-spacing: 0.06rem;
                         text-transform: uppercase;
                         text-decoration: none;
+                        color: $color-text-secondary;
                     }
 
                     span {
@@ -78,6 +79,10 @@
                     }
 
                     &.active {
+                        h2 {
+                            color: $color-text-primary;
+                        }
+                        
                         span {
                             opacity: 1;
                         }

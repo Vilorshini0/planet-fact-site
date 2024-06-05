@@ -1,0 +1,31 @@
+.view-switcher-desktop {
+    display: flex;
+    flex-direction: column;
+    width: 21.875rem;
+    row-gap: 1rem;
+
+    button {
+        height: 3rem;
+        border: 1px solid $color-border-primary;
+        color: $color-text-primary;
+        font-family: $secondaryFont;
+        text-align: left;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2.75px;
+        font-size: 0.75rem;
+
+        span {
+            padding: 0 1.4rem;
+            color: $color-text-secondary;
+        }
+
+        &:not(:focus) {
+            background-color: transparent;
+        }
+
+        &:focus {
+            border: 0;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+.planet-description {
+    display: flex;
+    flex-direction: column;
+    width: 21.875rem;
+    font-family: $secondaryFont;
+    row-gap: 1.55rem;
+    padding-bottom: 2.3rem;
+
+    h1 {
+        text-transform: uppercase;
+        font-family: $primaryFont;
+        font-size: 5rem;
+    }
+
+    p {
+        color: $color-text-secondary;
+        font-size: 0.875rem;
+        line-height: 1.55rem;
+
+        &.link {
+            a {
+                font-weight: 600;
+            }
+        }
+    }
+}

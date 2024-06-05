@@ -13,6 +13,7 @@ export default function ViewSwitcherDesktop(props) {
                 onClick={() => dispatch(updatePageStatus({pageStatus: 'overview'}))} 
                 className={pageStatus === 'overview' ? props.planetName : undefined }
             >
+                <span>01</span>
                 Overview
             </button>
 
@@ -20,6 +21,7 @@ export default function ViewSwitcherDesktop(props) {
                 onClick={() => dispatch(updatePageStatus({pageStatus: 'structure'}))} 
                 className={pageStatus === 'structure' ? props.planetName : undefined }
             >
+                <span>02</span>
                 Internal Structure
             </button>
 
@@ -27,6 +29,7 @@ export default function ViewSwitcherDesktop(props) {
                 onClick={() => dispatch(updatePageStatus({pageStatus: 'geology'}))} 
                 className={pageStatus === 'geology' ? props.planetName : undefined }
             >
+                <span>03</span>
                 Surface
             </button>
         </section>

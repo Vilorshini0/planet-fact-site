@@ -43,6 +43,56 @@ h1, h2, h3, h4, h5, h6, p, span {
   color: rgb(255, 255, 255);
 }
 
+.view-switcher-desktop {
+  display: flex;
+  flex-direction: column;
+  width: 21.875rem;
+  row-gap: 1rem;
+}
+.view-switcher-desktop button {
+  height: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgb(255, 255, 255);
+  font-family: "Spartan";
+  text-align: left;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2.75px;
+  font-size: 0.75rem;
+}
+.view-switcher-desktop button span {
+  padding: 0 1.4rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+.view-switcher-desktop button:not(:focus) {
+  background-color: transparent;
+}
+.view-switcher-desktop button:focus {
+  border: 0;
+}
+
+.planet-description {
+  display: flex;
+  flex-direction: column;
+  width: 21.875rem;
+  font-family: "Spartan";
+  row-gap: 1.55rem;
+  padding-bottom: 2.3rem;
+}
+.planet-description h1 {
+  text-transform: uppercase;
+  font-family: "Antonio", sans-serif;
+  font-size: 5rem;
+}
+.planet-description p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.875rem;
+  line-height: 1.55rem;
+}
+.planet-description p.link a {
+  font-weight: 600;
+}
+
 .header-mobile {
   background-color: transparent;
   display: flex;
@@ -178,6 +228,7 @@ h1, h2, h3, h4, h5, h6, p, span {
   letter-spacing: 0.06rem;
   text-transform: uppercase;
   text-decoration: none;
+  color: rgba(255, 255, 255, 0.75);
 }
 .header-desktop .header-desktop__nav ul li .nav-link span {
   position: absolute;
@@ -186,6 +237,9 @@ h1, h2, h3, h4, h5, h6, p, span {
   height: 0.25rem;
   width: 100%;
   display: block;
+}
+.header-desktop .header-desktop__nav ul li .nav-link.active h2 {
+  color: rgb(255, 255, 255);
 }
 .header-desktop .header-desktop__nav ul li .nav-link.active span {
   opacity: 1;
@@ -228,6 +282,23 @@ h1, h2, h3, h4, h5, h6, p, span {
   bottom: 0;
 }
 
-.planet-visual {
-  width: 80%;
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 1px 1px;
+  grid-template-areas: "img planet-description" "img view-switcher" "planet-characteristics planet-characteristics";
+  padding-top: 8rem;
+}
+main img {
+  grid-area: img;
+}
+main .planet-description {
+  grid-area: planet-description;
+}
+main .planet-characteristics {
+  grid-area: planet-characteristics;
+}
+main .view-switcher-desktop {
+  grid-area: view-switcher;
 }/*# sourceMappingURL=app.css.map */

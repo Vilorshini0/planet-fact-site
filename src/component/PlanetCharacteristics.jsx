@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 
 export default function PlanetCharacteristics(props) {
     return (
-        <section>
+        <section className="planet-characteristics">
             <div className="rotation-time">
                 <p>Rotation time</p>
                 <p>{props.rotationTime}</p>

@@ -5,7 +5,11 @@
 @import "base/global";
 @import "base/typography";
 
+@import "component/ViewSwitcherDesktop";
+@import "component/PlanetDescription";
+
 @import "layout/HeaderMobile";
 @import "layout/HeaderDesktop";
 
 @import "pages/PlanetPages";
+

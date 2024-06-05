@@ -39,6 +39,31 @@
     }
 }
 
-.planet-visual {
-    width: 80%;
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 1px 1px;
+    grid-template-areas: 
+                        "img planet-description"
+                        "img view-switcher"
+                        "planet-characteristics planet-characteristics";
+    padding-top: 8rem;
+
+
+    img {
+        grid-area: img; 
+    }
+
+    .planet-description {
+        grid-area: planet-description;
+    }
+
+    .planet-characteristics {
+        grid-area: planet-characteristics;
+    }
+
+    .view-switcher-desktop {
+        grid-area: view-switcher;
+    }
 }
