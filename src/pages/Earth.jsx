@@ -34,7 +34,7 @@ export default function Earth() {
     return (
         <main className="planet-earth">
             {/* Mobile */}
-            {screenWidth <= 768 && <ViewSwitcherMobile planetName={earth.name} />}
+            {screenWidth <= 640 && <ViewSwitcherMobile planetName={earth.name} />}
 
             <img className="planet-visual" src={pageStatusMapping[pageStatus]?.img} />
             {pageStatus === 'geology' && <img src={imgPlanetSurface} />}
@@ -46,7 +46,7 @@ export default function Earth() {
             />
 
             {/* Tablet/desktop */}
-            {screenWidth > 768 && <ViewSwitcherDesktop planetName={earth.name} />}
+            {screenWidth > 640 && <ViewSwitcherDesktop planetName={earth.name} />}
 
             <PlanetCharacteristics
                 rotationTime={earth.rotation}

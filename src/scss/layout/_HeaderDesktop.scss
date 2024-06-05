@@ -4,7 +4,14 @@
     align-items: center;
     height: 5.25rem;
     border-bottom: 1px solid $color-border-primary;
-    padding: 0 2.5625rem 0 2rem;
+    padding: 0 2.5% 0 2.1%;
+
+    @media screen and (min-device-width: 640px) and (max-device-width: 848px) { 
+        display: flex;
+        flex-direction: column;
+        height: 8rem;
+        margin-top: 2.05rem;
+    }
 
     .header-desktop__title {
         font-family: $primaryFont;
@@ -15,21 +22,66 @@
     }
 
     .header-desktop__nav {
+        height: 100%;
+
+        @media screen and (min-device-width: 640px) and (max-device-width: 848px) {
+            margin-top: 0.8rem;
+        }
+
         ul {
             display: flex;
             column-gap: 2.0625rem;
+            margin: 0;
+            height: 100%;
+            padding-left: 0;
+            justify-content: flex-end;
 
-            .nav-link {
-                text-decoration: none;
+            @media screen and (min-device-width: 640px) and (max-device-width: 848px) {
+                column-gap: 4.5%;
+                justify-content: center;
 
-                h2 {
-                    font-family: $secondaryFont;
-                    font-size: 0.69rem;
-                    font-weight: 700;
-                    line-height: 1.56rem;
-                    letter-spacing: 0.06rem;
-                    text-transform: uppercase;
+                .nav-link {
+                    span {
+                        bottom: 0;
+                        top: unset !important;
+                    }
+                }
+            }
+            
+            li {
+                list-style-type: none;
+
+                .nav-link {
                     text-decoration: none;
+                    position: relative;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+
+                    h2 {
+                        font-family: $secondaryFont;
+                        font-size: 0.69rem;
+                        font-weight: 700;
+                        line-height: 1.56rem;
+                        letter-spacing: 0.06rem;
+                        text-transform: uppercase;
+                        text-decoration: none;
+                    }
+
+                    span {
+                        position: absolute;
+                        top: 0;
+                        opacity: 0;
+                        height: 0.25rem;
+                        width: 100%;
+                        display: block;
+                    }
+
+                    &.active {
+                        span {
+                            opacity: 1;
+                        }
+                    }
                 }
             }
         }

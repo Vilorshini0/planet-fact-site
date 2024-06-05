@@ -37,7 +37,7 @@ function App() {
 
     return (
         <section className="app">
-            {screenWidth <= 768 ? <HeaderMobile /> : <HeaderDesktop />}
+            {screenWidth <= 640 ? <HeaderMobile /> : <HeaderDesktop />}
             <Outlet />
         </section>
     )
