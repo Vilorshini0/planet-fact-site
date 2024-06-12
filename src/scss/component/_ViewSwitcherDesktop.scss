@@ -17,7 +17,8 @@
 
         span {
             padding: 0 1.4rem;
-            color: $color-text-secondary;
+            color: $color-text-tertiary;
+            font-weight: 600;
         }
 
         &:not(:focus) {

@@ -62,13 +62,51 @@ h1, h2, h3, h4, h5, h6, p, span {
 }
 .view-switcher-desktop button span {
   padding: 0 1.4rem;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
 }
 .view-switcher-desktop button:not(:focus) {
   background-color: transparent;
 }
 .view-switcher-desktop button:focus {
   border: 0;
+}
+
+.view-switcher-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.view-switcher-mobile button {
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.75);
+  outline: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-family: "Spartan";
+  font-size: 0.56rem;
+  letter-spacing: 0.12rem;
+  font-weight: 700;
+}
+.view-switcher-mobile .view-switcher--active {
+  position: relative;
+  height: 3.3rem;
+  display: flex;
+  align-items: center;
+}
+.view-switcher-mobile .view-switcher--active button {
+  color: rgb(255, 255, 255);
+}
+.view-switcher-mobile .view-switcher--active span {
+  position: absolute;
+  height: 0.25rem;
+  width: 100%;
+  bottom: 0;
 }
 
 .planet-description {
@@ -245,60 +283,26 @@ h1, h2, h3, h4, h5, h6, p, span {
   opacity: 1;
 }
 
-.view-switcher-mobile {
+main.planet .planet__main-section {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-.view-switcher-mobile button {
-  background-color: transparent;
-  color: rgba(255, 255, 255, 0.75);
-  outline: none;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
-  font-family: "Spartan";
-  font-size: 0.56rem;
-  letter-spacing: 0.12rem;
-  font-weight: 700;
-}
-.view-switcher-mobile .view-switcher--active {
-  position: relative;
-  height: 3.3rem;
-  display: flex;
+  flex-direction: column;
   align-items: center;
 }
-.view-switcher-mobile .view-switcher--active button {
-  color: rgb(255, 255, 255);
+@media only screen and (min-width: 1024px) {
+  main.planet .planet__main-section {
+    flex-direction: row;
+    justify-content: center;
+  }
 }
-.view-switcher-mobile .view-switcher--active span {
-  position: absolute;
-  height: 0.25rem;
-  width: 100%;
-  bottom: 0;
+@media only screen and (min-width: 768px) {
+  main.planet .planet__main-section .description-switcher-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
-
-main {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 1px 1px;
-  grid-template-areas: "img planet-description" "img view-switcher" "planet-characteristics planet-characteristics";
-  padding-top: 8rem;
-}
-main img {
-  grid-area: img;
-}
-main .planet-description {
-  grid-area: planet-description;
-}
-main .planet-characteristics {
-  grid-area: planet-characteristics;
-}
-main .view-switcher-desktop {
-  grid-area: view-switcher;
+@media only screen and (min-width: 1024px) {
+  main.planet .planet__main-section .description-switcher-wrapper {
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=app.css.map */

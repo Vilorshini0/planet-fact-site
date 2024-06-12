@@ -1,0 +1,40 @@
+.view-switcher-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    border-bottom: 1px solid $color-border-primary;
+
+    button {
+        background-color: transparent;
+        color: $color-text-secondary;
+        outline: none;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        font-family: $secondaryFont;
+        font-size: 0.56rem;
+        letter-spacing: 0.12rem;
+        font-weight: 700;
+    }
+
+    .view-switcher--active {
+        position: relative;
+        height: 3.3rem;
+        display: flex;
+        align-items: center;
+
+        button {
+            color: $color-text-primary;
+        }
+
+        span {
+            position: absolute;
+            height: 0.25rem;
+            width: 100%;
+            bottom: 0;
+        }
+    }
+}

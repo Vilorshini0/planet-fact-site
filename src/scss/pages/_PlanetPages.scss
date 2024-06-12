@@ -1,69 +1,24 @@
-.view-switcher-mobile {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 2rem;
-    border-bottom: 1px solid $color-border-primary;
-
-    button {
-        background-color: transparent;
-        color: $color-text-secondary;
-        outline: none;
-        border: none;
+main.planet {
+    .planet__main-section {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        text-transform: uppercase;
-        font-family: $secondaryFont;
-        font-size: 0.56rem;
-        letter-spacing: 0.12rem;
-        font-weight: 700;
-    }
-
-    .view-switcher--active {
-        position: relative;
-        height: 3.3rem;
-        display: flex;
+        flex-direction: column;
         align-items: center;
 
-        button {
-            color: $color-text-primary;
+        @include desktop-only {
+            flex-direction: row;
+            justify-content: center;
         }
+        
+        .description-switcher-wrapper {
+            @include tablet-only {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
 
-        span {
-            position: absolute;
-            height: 0.25rem;
-            width: 100%;
-            bottom: 0;
+            @include desktop-only {
+                flex-direction: column;
+            }
         }
-    }
-}
-
-main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 1px 1px;
-    grid-template-areas: 
-                        "img planet-description"
-                        "img view-switcher"
-                        "planet-characteristics planet-characteristics";
-    padding-top: 8rem;
-
-
-    img {
-        grid-area: img; 
-    }
-
-    .planet-description {
-        grid-area: planet-description;
-    }
-
-    .planet-characteristics {
-        grid-area: planet-characteristics;
-    }
-
-    .view-switcher-desktop {
-        grid-area: view-switcher;
     }
 }

@@ -32,21 +32,25 @@ export default function Earth() {
     }
 
     return (
-        <main className="planet-earth">
+        <main className="planet planet-earth">
             {/* Mobile */}
             {screenWidth <= 640 && <ViewSwitcherMobile planetName={earth.name} />}
 
-            <img className="planet-visual" src={pageStatusMapping[pageStatus]?.img} />
-            {pageStatus === 'geology' && <img src={imgPlanetSurface} />}
+            <section className="planet__main-section">
+                <img className="planet-visual" src={pageStatusMapping[pageStatus]?.img} />
+                {pageStatus === 'geology' && <img src={imgPlanetSurface} />}
 
-            <PlanetDescription
-                planetName={earth.name}
-                description={pageStatusMapping[pageStatus]?.content || ''}
-                source={pageStatusMapping[pageStatus]?.source || ''}
-            />
+                <section className="description-switcher-wrapper">
+                    <PlanetDescription
+                        planetName={earth.name}
+                        description={pageStatusMapping[pageStatus]?.content || ''}
+                        source={pageStatusMapping[pageStatus]?.source || ''}
+                    />
 
-            {/* Tablet/desktop */}
-            {screenWidth > 640 && <ViewSwitcherDesktop planetName={earth.name} />}
+                    {/* Tablet/desktop */}
+                    {screenWidth > 640 && <ViewSwitcherDesktop planetName={earth.name} />}
+                </section>
+            </section>
 
             <PlanetCharacteristics
                 rotationTime={earth.rotation}
