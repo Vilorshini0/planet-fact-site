@@ -37,7 +37,9 @@ export default function Earth() {
             {screenWidth <= 640 && <ViewSwitcherMobile planetName={earth.name} />}
 
             <section className="planet__main-section">
-                <img className="planet-visual" src={pageStatusMapping[pageStatus]?.img} />
+                <section className="planet__main-section_visual">
+                    <img className="planet-visual" src={pageStatusMapping[pageStatus]?.img} />
+                </section>
                 {pageStatus === 'geology' && <img src={imgPlanetSurface} />}
 
                 <section className="description-switcher-wrapper">

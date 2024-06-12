@@ -1,6 +1,8 @@
 .planet-description {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 21.875rem;
     font-family: $secondaryFont;
     row-gap: 1.55rem;
@@ -13,6 +15,8 @@
     }
 
     p {
+        width: 20.44rem;
+        text-align: center;
         color: $color-text-secondary;
         font-size: 0.875rem;
         line-height: 1.55rem;
@@ -20,6 +24,7 @@
         &.link {
             a {
                 font-weight: 600;
+                color: $color-text-secondary;
             }
         }
     }

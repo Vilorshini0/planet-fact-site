@@ -112,6 +112,8 @@ h1, h2, h3, h4, h5, h6, p, span {
 .planet-description {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 21.875rem;
   font-family: "Spartan";
   row-gap: 1.55rem;
@@ -123,12 +125,44 @@ h1, h2, h3, h4, h5, h6, p, span {
   font-size: 5rem;
 }
 .planet-description p {
+  width: 20.44rem;
+  text-align: center;
   color: rgba(255, 255, 255, 0.75);
   font-size: 0.875rem;
   line-height: 1.55rem;
 }
 .planet-description p.link a {
   font-weight: 600;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.planet-characteristics {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.planet-characteristics div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 20.44rem;
+  height: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0 1rem;
+  margin: 0.5rem 0;
+}
+.planet-characteristics div p:first-of-type {
+  font-family: "Spartan";
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 700;
+}
+.planet-characteristics div p:last-of-type {
+  font-family: "Antonio", sans-serif;
+  font-weight: 400;
 }
 
 .header-mobile {
@@ -287,6 +321,15 @@ main.planet .planet__main-section {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+main.planet .planet__main-section .planet__main-section_visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 304px;
+}
+main.planet .planet__main-section .planet__main-section_visual .planet-visual {
+  width: 46%;
 }
 @media only screen and (min-width: 1024px) {
   main.planet .planet__main-section {

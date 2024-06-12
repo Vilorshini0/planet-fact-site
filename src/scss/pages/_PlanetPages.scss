@@ -4,6 +4,17 @@ main.planet {
         flex-direction: column;
         align-items: center;
 
+        .planet__main-section_visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 304px;
+
+            .planet-visual {
+                width: 46%;
+            }
+        }
+
         @include desktop-only {
             flex-direction: row;
             justify-content: center;
