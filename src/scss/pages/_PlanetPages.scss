@@ -3,6 +3,10 @@ body {
     margin: auto;
 
     main.planet {
+        @include tablet-only {
+            margin: 0 2rem;
+        }
+
         .planet__main-section {
             display: flex;
             flex-direction: column;
@@ -10,20 +14,49 @@ body {
     
             .planet__main-section_visual {
                 display: flex;
-                align-items: flex-end;
+                flex-direction: column;
+                align-items: center;
                 justify-content: center;
-                height: 238px;
-    
-                .planet-visual {
-                    width: 46%;
+                height: 18.5rem;
+                width: 100%;
+
+                @include tablet-only {
+                    height: 29rem;
                 }
 
+                &:has(.planet-geology) {
+                    height: 25rem;
+
+                    @include tablet-only {
+                        height: 34.5rem;
+                    }
                 }
                 
-                .planet-geology {
-                    width: 30%;
-                    transform: translateY(-54px);
+                .planet-visual-grouped {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    transform: scale(0.37);
+
+                    @include tablet-only {
+                        transform: scale(0.65);
+                    }
+    
+                    .planet-geology {
+                        width: 60%;
+                        transform: translateY(-132px);
+                        margin-bottom: -9rem;
+
+                        @include tablet-only {
+                            width: 46%;
+                            margin-bottom: -9rem;
+                        }
+                    }
                 }
+    
+            }
+                
     
             @include desktop-only {
                 flex-direction: row;
@@ -34,7 +67,8 @@ body {
                 @include tablet-only {
                     display: flex;
                     align-items: center;
-                    justify-content: center;
+                    justify-content: space-between;
+                    width: 100%;
                 }
     
                 @include desktop-only {

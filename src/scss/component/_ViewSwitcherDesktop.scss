@@ -4,6 +4,11 @@
     width: 21.875rem;
     row-gap: 1rem;
 
+    @include tablet-only {
+        width: 21.19rem;
+        align-items: flex-start;
+    }
+
     button {
         height: 3rem;
         border: 1px solid $color-border-primary;
@@ -14,6 +19,7 @@
         text-transform: uppercase;
         letter-spacing: 2.75px;
         font-size: 0.75rem;
+        width: 100%;
 
         span {
             padding: 0 1.4rem;

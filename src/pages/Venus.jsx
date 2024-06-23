@@ -11,7 +11,7 @@ import data from "../data.json"
 export default function Venus() {
     const screenWidth = useSelector(state => state.appState.screenWidth)
         const pageStatus = useSelector(state => state.appState.pageStatus)
-        const venus = data[6]
+        const venus = data[1]
 
         const pageStatusMapping = {
             overview: {
@@ -38,9 +38,11 @@ export default function Venus() {
 
                 <section className="planet__main-section">
                     <section className="planet__main-section_visual">
-                        <img className="planet-visual" src={pageStatusMapping[pageStatus]?.img} />
+                        <section className="planet-visual-grouped">  
+                            <img className="planet-visual" src={pageStatusMapping[pageStatus]?.img} />
+                            {pageStatus === 'geology' && <img className="planet-geology" src={imgPlanetSurface} />}
+                        </section>
                     </section>
-                    {pageStatus === 'geology' && <img className="planet-geology" src={imgPlanetSurface} />}
 
                     <section className="description-switcher-wrapper">
                         <PlanetDescription

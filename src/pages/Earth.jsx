@@ -38,9 +38,11 @@ export default function Earth() {
 
             <section className="planet__main-section">
                 <section className="planet__main-section_visual">
-                    <img className="planet-visual" src={pageStatusMapping[pageStatus]?.img} />
+                    <section className="planet-visual-grouped">  
+                        <img className="planet-visual" src={pageStatusMapping[pageStatus]?.img} />
+                        {pageStatus === 'geology' && <img className="planet-geology" src={imgPlanetSurface} />}
+                    </section>
                 </section>
-                {pageStatus === 'geology' && <img className="planet-geology" src={imgPlanetSurface} />}
 
                 <section className="description-switcher-wrapper">
                     <PlanetDescription
