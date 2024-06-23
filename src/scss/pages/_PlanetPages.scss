@@ -1,34 +1,45 @@
-main.planet {
-    .planet__main-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+body {
+    max-width: 1920px;
+    margin: auto;
 
-        .planet__main-section_visual {
+    main.planet {
+        .planet__main-section {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            height: 304px;
-
-            .planet-visual {
-                width: 46%;
-            }
-        }
-
-        @include desktop-only {
-            flex-direction: row;
-            justify-content: center;
-        }
-        
-        .description-switcher-wrapper {
-            @include tablet-only {
+    
+            .planet__main-section_visual {
                 display: flex;
-                align-items: center;
+                align-items: flex-end;
+                justify-content: center;
+                height: 238px;
+    
+                .planet-visual {
+                    width: 46%;
+                }
+
+                }
+                
+                .planet-geology {
+                    width: 30%;
+                    transform: translateY(-54px);
+                }
+    
+            @include desktop-only {
+                flex-direction: row;
                 justify-content: center;
             }
-
-            @include desktop-only {
-                flex-direction: column;
+            
+            .description-switcher-wrapper {
+                @include tablet-only {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+    
+                @include desktop-only {
+                    flex-direction: column;
+                }
             }
         }
     }

@@ -21,11 +21,16 @@
             font-family: $secondaryFont;
             color: $color-text-secondary;
             font-weight: 700;
+            font-size: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05rem;
         }
 
         p:last-of-type {
             font-family: $primaryFont;
             font-weight: 400;
+            font-size: 1.25rem;
+            letter-spacing: -0.05rem;
         }
 
         
