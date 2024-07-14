@@ -7,6 +7,10 @@ body {
             margin: 0 2rem;
         }
 
+        @include desktop-only {
+            margin: 8rem 2rem 0;
+        }
+
         .planet__main-section {
             display: flex;
             flex-direction: column;
@@ -22,6 +26,10 @@ body {
 
                 @include tablet-only {
                     height: 29rem;
+                }
+
+                @include desktop-only {
+                    width: 65%;
                 }
 
                 &:has(.planet-geology) {
@@ -42,6 +50,10 @@ body {
                     @include tablet-only {
                         transform: scale(0.65);
                     }
+
+                    @include desktop-only {
+                        transform: scale(0.68);
+                    }
     
                     .planet-geology {
                         width: 60%;
@@ -51,6 +63,12 @@ body {
                         @include tablet-only {
                             width: 46%;
                             margin-bottom: -9rem;
+                        }
+
+                        
+                        @include desktop-only {
+                            width: 42%;
+                            transform: translateY(-176px);
                         }
                     }
                 }
@@ -73,6 +91,8 @@ body {
     
                 @include desktop-only {
                     flex-direction: column;
+                    align-items: flex-start;
+                    width: 35%;
                 }
             }
         }

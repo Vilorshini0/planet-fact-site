@@ -11,6 +11,12 @@
         column-gap: 11px;
     }
 
+    @include desktop-only {
+        margin: 5rem 0 3.6rem;
+        justify-content: center;
+        column-gap: 30px;
+    }
+
     div {
         width: 100%;
         display: flex;
@@ -33,7 +39,7 @@
         }
 
         @include desktop-only {
-            width: 15.94rem;
+            width: 13.94rem;
             height: 8rem;
         }
 

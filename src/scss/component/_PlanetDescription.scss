@@ -11,12 +11,27 @@
     @include tablet-only {
         width: 21.19rem;
         align-items: flex-start;
+        row-gap: 1.7rem;
+    }
+
+    @include desktop-only {
+        row-gap: 1.4rem;
+        padding-bottom: 2.5rem;
     }
 
     h1 {
         text-transform: uppercase;
         font-family: $primaryFont;
         font-size: 2.5rem;
+        font-weight: 400;
+
+        @include tablet-only {
+            font-size: 3rem;
+        }
+
+        @include desktop-only {
+            font-size: 5rem;
+        }
         
     }
 
@@ -29,6 +44,11 @@
 
         @include tablet-only {
             text-align: left;
+        }
+
+        @include desktop-only {
+            font-size: 0.88rem;
+            line-height: 1.56rem;
         }
 
         &.link {

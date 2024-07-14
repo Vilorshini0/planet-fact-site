@@ -55,6 +55,11 @@ h1, h2, h3, h4, h5, h6, p, span {
     align-items: flex-start;
   }
 }
+@media only screen and (min-width: 1024px) {
+  .view-switcher-desktop {
+    width: 22.19rem;
+  }
+}
 .view-switcher-desktop button {
   height: 3rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -130,12 +135,30 @@ h1, h2, h3, h4, h5, h6, p, span {
   .planet-description {
     width: 21.19rem;
     align-items: flex-start;
+    row-gap: 1.7rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .planet-description {
+    row-gap: 1.4rem;
+    padding-bottom: 2.5rem;
   }
 }
 .planet-description h1 {
   text-transform: uppercase;
   font-family: "Antonio", sans-serif;
   font-size: 2.5rem;
+  font-weight: 400;
+}
+@media only screen and (min-width: 640px) {
+  .planet-description h1 {
+    font-size: 3rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .planet-description h1 {
+    font-size: 5rem;
+  }
 }
 .planet-description p {
   width: 20.44rem;
@@ -147,6 +170,12 @@ h1, h2, h3, h4, h5, h6, p, span {
 @media only screen and (min-width: 640px) {
   .planet-description p {
     text-align: left;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .planet-description p {
+    font-size: 0.88rem;
+    line-height: 1.56rem;
   }
 }
 .planet-description p.link a {
@@ -167,6 +196,14 @@ h1, h2, h3, h4, h5, h6, p, span {
     flex-direction: row;
     -moz-column-gap: 11px;
          column-gap: 11px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .planet-characteristics {
+    margin: 5rem 0 3.6rem;
+    justify-content: center;
+    -moz-column-gap: 30px;
+         column-gap: 30px;
   }
 }
 .planet-characteristics div {
@@ -193,7 +230,7 @@ h1, h2, h3, h4, h5, h6, p, span {
 }
 @media only screen and (min-width: 1024px) {
   .planet-characteristics div {
-    width: 15.94rem;
+    width: 13.94rem;
     height: 8rem;
   }
 }
@@ -388,6 +425,11 @@ body {
     margin: 0 2rem;
   }
 }
+@media only screen and (min-width: 1024px) {
+  body main.planet {
+    margin: 8rem 2rem 0;
+  }
+}
 body main.planet .planet__main-section {
   display: flex;
   flex-direction: column;
@@ -404,6 +446,11 @@ body main.planet .planet__main-section .planet__main-section_visual {
 @media only screen and (min-width: 640px) {
   body main.planet .planet__main-section .planet__main-section_visual {
     height: 29rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  body main.planet .planet__main-section .planet__main-section_visual {
+    width: 65%;
   }
 }
 body main.planet .planet__main-section .planet__main-section_visual:has(.planet-geology) {
@@ -426,6 +473,11 @@ body main.planet .planet__main-section .planet__main-section_visual .planet-visu
     transform: scale(0.65);
   }
 }
+@media only screen and (min-width: 1024px) {
+  body main.planet .planet__main-section .planet__main-section_visual .planet-visual-grouped {
+    transform: scale(0.68);
+  }
+}
 body main.planet .planet__main-section .planet__main-section_visual .planet-visual-grouped .planet-geology {
   width: 60%;
   transform: translateY(-132px);
@@ -435,6 +487,12 @@ body main.planet .planet__main-section .planet__main-section_visual .planet-visu
   body main.planet .planet__main-section .planet__main-section_visual .planet-visual-grouped .planet-geology {
     width: 46%;
     margin-bottom: -9rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  body main.planet .planet__main-section .planet__main-section_visual .planet-visual-grouped .planet-geology {
+    width: 42%;
+    transform: translateY(-176px);
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -454,5 +512,7 @@ body main.planet .planet__main-section .planet__main-section_visual .planet-visu
 @media only screen and (min-width: 1024px) {
   body main.planet .planet__main-section .description-switcher-wrapper {
     flex-direction: column;
+    align-items: flex-start;
+    width: 35%;
   }
 }/*# sourceMappingURL=app.css.map */

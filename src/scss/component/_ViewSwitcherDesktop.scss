@@ -9,6 +9,10 @@
         align-items: flex-start;
     }
 
+    @include desktop-only {
+        width: 22.19rem;
+    }
+
     button {
         height: 3rem;
         border: 1px solid $color-border-primary;
