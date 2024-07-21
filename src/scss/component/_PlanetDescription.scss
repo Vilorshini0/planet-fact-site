@@ -9,7 +9,7 @@
     padding-bottom: 1.2rem;
 
     @include tablet-only {
-        width: 21.19rem;
+        width: 22.19rem;
         align-items: flex-start;
         row-gap: 1.7rem;
     }
@@ -47,6 +47,7 @@
         }
 
         @include desktop-only {
+            width: 100%;
             font-size: 0.88rem;
             line-height: 1.56rem;
         }

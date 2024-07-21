@@ -52,23 +52,27 @@ body {
                     }
 
                     @include desktop-only {
-                        transform: scale(0.68);
+                        transform: scale(0.7);
+                    }
+
+                    &:has(.planet-geology) {
+                        .planet-visual {
+                           transform: translateY(94px);
+
+                        }
                     }
     
                     .planet-geology {
                         width: 60%;
-                        transform: translateY(-132px);
-                        margin-bottom: -9rem;
+                        transform: translateY(-50px);
 
                         @include tablet-only {
                             width: 46%;
-                            margin-bottom: -9rem;
                         }
 
                         
                         @include desktop-only {
                             width: 42%;
-                            transform: translateY(-176px);
                         }
                     }
                 }
