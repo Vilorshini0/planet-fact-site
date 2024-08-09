@@ -136,6 +136,7 @@ h1, h2, h3, h4, h5, h6, p, span {
     width: 22.19rem;
     align-items: flex-start;
     row-gap: 1.7rem;
+    margin-right: 1rem;
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -169,6 +170,7 @@ h1, h2, h3, h4, h5, h6, p, span {
 }
 @media only screen and (min-width: 640px) {
   .planet-description p {
+    width: 100%;
     text-align: left;
   }
 }
@@ -421,6 +423,10 @@ body {
   max-width: 1920px;
   margin: auto;
 }
+body main.planet.planet-saturn .planet__main-section .planet__main-section_visual .planet-visual-grouped .planet-geology {
+  width: 35%;
+  transform: translateY(-36%);
+}
 @media only screen and (min-width: 640px) {
   body main.planet {
     margin: 0 2rem;
@@ -480,11 +486,11 @@ body main.planet .planet__main-section .planet__main-section_visual .planet-visu
   }
 }
 body main.planet .planet__main-section .planet__main-section_visual .planet-visual-grouped:has(.planet-geology) .planet-visual {
-  transform: translateY(94px);
+  transform: translateY(20%);
 }
 body main.planet .planet__main-section .planet__main-section_visual .planet-visual-grouped .planet-geology {
   width: 60%;
-  transform: translateY(-50px);
+  transform: translateY(-8%);
 }
 @media only screen and (min-width: 640px) {
   body main.planet .planet__main-section .planet__main-section_visual .planet-visual-grouped .planet-geology {

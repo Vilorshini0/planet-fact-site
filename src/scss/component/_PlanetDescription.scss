@@ -12,6 +12,7 @@
         width: 22.19rem;
         align-items: flex-start;
         row-gap: 1.7rem;
+        margin-right: 1rem;
     }
 
     @include desktop-only {
@@ -43,6 +44,7 @@
         line-height: 1.38rem;
 
         @include tablet-only {
+            width: 100%;
             text-align: left;
         }
 

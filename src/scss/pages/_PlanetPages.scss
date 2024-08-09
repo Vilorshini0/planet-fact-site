@@ -3,6 +3,11 @@ body {
     margin: auto;
 
     main.planet {
+        &.planet-saturn .planet__main-section .planet__main-section_visual .planet-visual-grouped .planet-geology {
+            width: 35%;
+            transform: translateY(-36%);
+        }
+
         @include tablet-only {
             margin: 0 2rem;
         }
@@ -57,14 +62,14 @@ body {
 
                     &:has(.planet-geology) {
                         .planet-visual {
-                           transform: translateY(94px);
+                           transform: translateY(20%);
 
                         }
                     }
     
                     .planet-geology {
                         width: 60%;
-                        transform: translateY(-50px);
+                        transform: translateY(-8%);
 
                         @include tablet-only {
                             width: 46%;
