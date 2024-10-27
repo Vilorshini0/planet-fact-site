@@ -7,7 +7,7 @@ export default function PlanetDescription(props) {
             <h1>{props.planetName}</h1>      
             <p>{props.description}</p>
             <p className="link">
-                Source : <a href={props.source}>Wikipedia </a>
+                Source : <a href={props.source} target="_blank">Wikipedia </a>
                 <img src={wikiIcon} alt="" />
             </p>
         </section>

@@ -13,30 +13,33 @@
         width: 22.19rem;
     }
 
-    button {
+    div {
         height: 3rem;
-        border: 1px solid $color-border-primary;
-        color: $color-text-primary;
-        font-family: $secondaryFont;
-        text-align: left;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 2.75px;
-        font-size: 0.75rem;
         width: 100%;
 
-        span {
-            padding: 0 1.4rem;
-            color: $color-text-secondary;
-            font-weight: 600;
-        }
+        button {
+            height: 100%;
+            border: 1px solid $color-border-primary;
+            color: $color-text-primary;
+            font-family: $secondaryFont;
+            text-align: left;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2.75px;
+            font-size: 0.75rem;
+            width: 100%;
+            background: none;
+            cursor: pointer;
 
-        &:not(:focus) {
-            background-color: transparent;
-        }
+            span {
+                padding: 0 1.4rem;
+                color: $color-text-secondary;
+                font-weight: 600;
+            }
 
-        &:focus {
-            border: 0;
+            &:focus {
+                border: 0;
+            }
         }
     }
 }

@@ -60,8 +60,12 @@ h1, h2, h3, h4, h5, h6, p, span {
     width: 22.19rem;
   }
 }
-.view-switcher-desktop button {
+.view-switcher-desktop div {
   height: 3rem;
+  width: 100%;
+}
+.view-switcher-desktop div button {
+  height: 100%;
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: rgb(255, 255, 255);
   font-family: "Spartan";
@@ -71,16 +75,15 @@ h1, h2, h3, h4, h5, h6, p, span {
   letter-spacing: 2.75px;
   font-size: 0.75rem;
   width: 100%;
+  background: none;
+  cursor: pointer;
 }
-.view-switcher-desktop button span {
+.view-switcher-desktop div button span {
   padding: 0 1.4rem;
   color: rgba(255, 255, 255, 0.5);
   font-weight: 600;
 }
-.view-switcher-desktop button:not(:focus) {
-  background-color: transparent;
-}
-.view-switcher-desktop button:focus {
+.view-switcher-desktop div button:focus {
   border: 0;
 }
 

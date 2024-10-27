@@ -9,29 +9,26 @@ export default function ViewSwitcherDesktop(props) {
 
     return (
         <section className='view-switcher-desktop'>
-            <button 
-                onClick={() => dispatch(updatePageStatus({pageStatus: 'overview'}))} 
-                className={pageStatus === 'overview' ? props.planetName : undefined }
-            >
-                <span>01</span>
-                Overview
-            </button>
+            <div className={pageStatus === 'overview' ? props.planetName : undefined }>
+                <button onClick={() => dispatch(updatePageStatus({pageStatus: 'overview'}))}>
+                    <span>01</span>
+                    Overview
+                </button>
+            </div>
 
-            <button 
-                onClick={() => dispatch(updatePageStatus({pageStatus: 'structure'}))} 
-                className={pageStatus === 'structure' ? props.planetName : undefined }
-            >
-                <span>02</span>
-                Internal Structure
-            </button>
+            <div className={pageStatus === 'structure' ? props.planetName : undefined }>
+                <button onClick={() => dispatch(updatePageStatus({pageStatus: 'structure'}))}>
+                    <span>02</span>
+                    Internal Structure
+                </button>
+            </div>
 
-            <button 
-                onClick={() => dispatch(updatePageStatus({pageStatus: 'geology'}))} 
-                className={pageStatus === 'geology' ? props.planetName : undefined }
-            >
-                <span>03</span>
-                Surface
-            </button>
+            <div className={pageStatus === 'geology' ? props.planetName : undefined }>
+                <button onClick={() => dispatch(updatePageStatus({pageStatus: 'geology'}))}>
+                    <span>03</span>
+                    Surface
+                </button>
+            </div>
         </section>
     )
 }
